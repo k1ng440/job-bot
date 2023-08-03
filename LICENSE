@@ -1,6 +1,6 @@
-/* MIT License
+MIT License
 
-Copyright (c) 2023 Asaduzzaman Pavel (contact@iampavel.dev)
+Copyright (c) 2023 Asaduzzaman Pavel
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,25 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-*/
-
-package utils
-
-import (
-	"regexp"
-	"strconv"
-)
-
-func ParseStringToInt(inputStr string) (int, error) {
-	// Use a regular expression to remove all non-numeric characters
-	regex := regexp.MustCompile(`[^\d]`)
-	numericPart := regex.ReplaceAllString(inputStr, "")
-
-	// Convert the numeric part to an integer
-	resultInt, err := strconv.Atoi(numericPart)
-	if err != nil {
-		return 0, err
-	}
-
-	return resultInt, nil
-}
